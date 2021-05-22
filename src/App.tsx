@@ -1,5 +1,6 @@
 import React from 'react';
 import { ProductsPage } from 'components/pages';
+import './App.scss';
 
 function App() {
     return (
