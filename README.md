@@ -1,46 +1,86 @@
-# Getting Started with Create React App
+# Accenture Interview Test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is Hardi's very simple React project that shows a one-page product listing, put together in a rush, only for a demo purpose.
 
-## Available Scripts
+## Demo
 
-In the project directory, you can run:
+See the end result that I have deployed at http://accenture-test.litul.net/
 
-### `npm start`
+![Screenshot](http://accenture-test.litul.net/screenshot.jpg)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## A React solution
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+This project was initialised with [Create React App](https://github.com/facebook/create-react-app).
 
-### `npm test`
+I used TypeScript and I chose Material UI as the UI framework.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Running the project
 
-### `npm run build`
+Here is how you build and run the project:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Download and install [Node.js](https://nodejs.org/en/)
+2. Download the source code into a folder
+3. Open terminal (eg. `cmd`) on that folder
+4. Run `npm install`
+5. Run `npm start`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Building the project
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Run `npm run build` to create a production build. It will create a `build` folder that you can deploy onto your web hosting.
 
-### `npm run eject`
+## Project structure
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The entry point is `src/index.tsx` which renders `App`.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`App` would probably have the header/footer of the website, and a router to display certain pages depending on the route/URL. In this case it only has `ProductsPage`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+The solution is structured as below.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Public files - `public`
 
-## Learn More
+Files in this folder would simply be copied to the web server when deploying.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+When product images are supplied, it would be put in the `images` folder. I included 2 sample images and a fallback "no picture" image for demo purpose.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### App API clients - `src/api`
+
+Although a JSON file was provided, in real life the product data would most likely come from an API.
+This folder would contain those API clients.
+
+### UI components - `src/components`
+
+This is the main folder. It has our UI/React components.
+
+- `common`: Common/reusable UI components
+- `pages`: A page as the user sees it, although this would be an SPA
+- `scenes`: The widgets that will make up a page
+
+Associated CSS and test files have the same filename as the component.
+
+### TypeScript models - `src/models`
+
+We define our types here.
+
+### Utilities/Functions - `src/utils`
+
+We would have shared functions here.
+
+
+## Possible improvements?
+
+This is only a demo project quickly done in a hurry. The wireframe doesn't even seem like a complete page (no header/footer).
+
+There may be a lot of things that you expect to see in a real project, such as:
+
+- React router: A complete website would have many pages. React router helps with more complex navigational requirements in the project.
+- Storybook: Helps in creating/designing/testing UI components in isolation. It could also be useful for visual regression testing.
+- Redux: Helps managing global application state. We might need to store the list of products/categories, some store settings, or logged-in user details/configuration in a global state.
+- Form component (eg. Formik)
+
+You may not need all of them, it will depend on the project. Or on the UX side:
+
+- Filter could be a lot more complex
+- Thumbnail might contain multiple product images
+- Printer friendly styles
+
+This readme file itself could also be improved. And the list goes on...

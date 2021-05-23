@@ -9,11 +9,11 @@ const Image = ({
     fallbackSrc, alt, ...props
 }: Props) => {
 
-    const [errored, setErrored] = useState(false);
+    const [errorHandled, setErrorHandled] = useState(false);
 
     function handleError(e: React.SyntheticEvent<HTMLImageElement, Event>) {
-        if(fallbackSrc && !errored) {
-            setErrored(true);
+        if(fallbackSrc && !errorHandled) {
+            setErrorHandled(true);  // prevents infinite loop when fallbackSrc not found
             e.currentTarget.src = fallbackSrc;
         }
     }

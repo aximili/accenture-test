@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 import { Card } from '@material-ui/core';
 import { productUtil } from 'utils';
 import { Product } from 'models';
@@ -30,8 +31,10 @@ const ProductTile = ({
             </div>
 
             <div className='product-details'>
-                <div className='name'>{product.productName}</div>
-                <div className='price'>{product.priceText}</div>
+                <div>{product.productName}</div>
+                <div className={classNames('price', {'sale': product.isSale})}>
+                    {product.priceText}
+                </div>
             </div>
         </Card>
     );
