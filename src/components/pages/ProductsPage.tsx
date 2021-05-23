@@ -8,14 +8,11 @@ import { productUtil } from 'utils';
 
 const ProductsPage = () => {
 
-    const [products, setProducts] = useState<Product[]>([]);
+    const [products, setProducts] = useState<Product[] | null>(null);
     const [filter, setFilter] = useState({productType: '', query: ''});
 
-    const productTypes = productUtil.getUniqueTypes(products);
-
     useEffect(() => {
-        let allProducts = getProducts();
-        setProducts(allProducts);
+        getProducts().then(setProducts);
     }, []);
 
     const filteredProducts = useMemo(() => {
@@ -36,14 +33,27 @@ const ProductsPage = () => {
         setFilter(value);
     }
 
+
+    if (!products)
+        return <>Loading products...</>;
+
+    if (products.length === 0)
+        return <>No products to show.</>;
+
     return (
         <div className='products-page'>
-            <ProductFilter productTypes={productTypes} onChange={handleFilterChange} />
+
+            <ProductFilter
+                productTypes={productUtil.getUniqueTypes(products)}
+                onChange={handleFilterChange}
+            />
+
             <ul>
                 {filteredProducts.map(p => (
                     <li key={p.index}>{p.productName}</li>
                 ))}
             </ul>
+
         </div>
     );
 };
