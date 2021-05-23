@@ -6,13 +6,15 @@ This is Hardi's very simple React project that shows a one-page product listing,
 
 See the end result that I have deployed at http://accenture-test.litul.net/
 
-![Screenshot](http://accenture-test.litul.net/screenshot.jpg#1)
+![Screenshot](http://accenture-test.litul.net/screenshot.jpg)
 
 ## A React solution
 
 This project was initialised with [Create React App](https://github.com/facebook/create-react-app).
 
 I used TypeScript and I chose Material UI as the UI framework.
+
+Jest was used for testing as it is the default for React. I only added `react-test-renderer` to test DOM output as well.
 
 ### Running the project
 
