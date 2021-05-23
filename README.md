@@ -6,7 +6,7 @@ This is Hardi's very simple React project that shows a one-page product listing,
 
 See the end result that I have deployed at http://accenture-test.litul.net/
 
-![Screenshot](http://accenture-test.litul.net/screenshot.jpg)
+![Screenshot](http://accenture-test.litul.net/screenshot.jpg#1)
 
 ## A React solution
 
