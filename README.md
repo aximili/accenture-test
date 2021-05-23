@@ -40,7 +40,7 @@ The solution is structured as below.
 
 Files in this folder would simply be copied to the web server when deploying.
 
-When product images are supplied, it would be put in the `images` folder. I included 2 sample images and a fallback "no picture" image for demo purpose.
+When product images are supplied, it would be put in the `images` folder. I included 2 sample images and a fallback "No image found" image for demo purpose.
 
 ### App API clients - `src/api`
 
@@ -56,6 +56,8 @@ This is the main folder. It has our UI/React components.
 - `scenes`: The widgets that will make up a page
 
 Associated CSS and test files have the same filename as the component.
+
+I also added `index.ts` files on some folders to make imports cleaner.
 
 ### TypeScript models - `src/models`
 
