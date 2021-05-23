@@ -1,0 +1,49 @@
+@import 'base.scss';
+
+.product-tile {
+    position: relative;
+    margin: $product-tile-margin;
+
+    @media (min-width: 481px) and (max-width: 768px) {
+        width: calc((100%/2) - #{$product-tile-margin * 2});
+    }
+    @media (min-width: 769px) and (max-width: 1080px) {
+        width: calc((100%/3) - #{$product-tile-margin * 2});
+    }
+    @media (min-width: 1081px) {
+        width: calc((100%/4) - #{$product-tile-margin * 2});
+    }
+
+    .sale-banner {
+        position: absolute; top: 0; left: 0;
+        padding: 2px 12px;
+        background: #c00; color: white;
+        text-transform: uppercase;
+        z-index: 1;
+    }
+
+    .image-wrapper {
+        margin: 10px 15px;
+        height: 200px;
+        background-color: #eee;
+
+        > img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    .product-details {
+        display: flex; justify-content: space-between;
+        margin: 10px 15px;
+
+        .price {
+            margin-left: 12px;
+            font-size: 1.1em;
+            line-height: 1.2em;
+            font-weight: bold;
+            color: #666;
+        }
+    }
+}

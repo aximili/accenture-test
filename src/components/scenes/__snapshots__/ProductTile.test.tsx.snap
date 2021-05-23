@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders Product not on sale 1`] = `
+<div
+  className="MuiPaper-root MuiCard-root product-tile MuiPaper-elevation3 MuiPaper-rounded"
+>
+  <div
+    className="image-wrapper"
+  >
+    <img
+      alt="Pure Blonde Crate"
+      onError={[Function]}
+      src="/images/noimage.jpg"
+    />
+  </div>
+  <div
+    className="product-details"
+  >
+    <div
+      className="name"
+    >
+      Pure Blonde Crate
+    </div>
+    <div
+      className="price"
+    >
+      $49.99
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Renders Product on sale 1`] = `
+<div
+  className="MuiPaper-root MuiCard-root product-tile MuiPaper-elevation3 MuiPaper-rounded"
+>
+  <div
+    className="sale-banner"
+  >
+    Sale
+  </div>
+  <div
+    className="image-wrapper"
+  >
+    <img
+      alt="Pure Blonde Crate"
+      onError={[Function]}
+      src="/images/noimage.jpg"
+    />
+  </div>
+  <div
+    className="product-details"
+  >
+    <div
+      className="name"
+    >
+      Pure Blonde Crate
+    </div>
+    <div
+      className="price"
+    >
+      $49.99
+    </div>
+  </div>
+</div>
+`;

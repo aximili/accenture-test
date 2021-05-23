@@ -1,0 +1,6 @@
+@import 'base.scss';
+
+.product-tiles {
+    display: flex; flex-wrap: wrap;
+    margin: 12px ($product-tile-margin * -1);
+}

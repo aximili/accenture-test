@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import {  } from '@material-ui/core';
 import { getProducts } from 'api/productApi';
-import { Filter, Product } from 'models';
-import './ProductsPage.scss';
-import { ProductFilter } from 'components/scenes';
 import { productUtil } from 'utils';
+import { Filter, Product } from 'models';
+import { ProductFilter, ProductTiles } from 'components/scenes';
+import './ProductsPage.scss';
 
 const ProductsPage = () => {
 
@@ -48,11 +47,7 @@ const ProductsPage = () => {
                 onChange={handleFilterChange}
             />
 
-            <ul>
-                {filteredProducts.map(p => (
-                    <li key={p.index}>{p.productName}</li>
-                ))}
-            </ul>
+            <ProductTiles products={filteredProducts} />
 
         </div>
     );
